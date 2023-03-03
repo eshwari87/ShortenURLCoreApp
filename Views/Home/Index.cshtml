@@ -1,0 +1,32 @@
+﻿@model ShortenURLCoreApp.Models.UrlModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+   
+
+    <form method="post" asp-controller="Home" asp-action="Index">
+        <div class="container text-center">
+            <h1 class="display-4">Welcome</h1><br />
+                <div class="input-group">
+                    <input asp-for="UrlName" class="form-control rounded-0" type="url" placeholder="Enter URL"  />
+
+                <span style="width:15%">
+                    <button type="submit" class="btn btn-primary form-control rounded-0" >Submit</button>
+                </span>
+               
+            </div>
+            <span asp-validation-for="UrlName" class="text-danger"></span>
+        </div>
+    </form>
+   
+</div>
+<div>
+    @if (ViewData.ModelState.IsValid)
+    {
+        @ViewBag.Name;
+    }
+   
+
+</div>

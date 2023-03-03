@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ShortenURLCoreApp.Models.UrlModel>
+
+
+    <table class="table">
+        <tr>
+            <th>Original URL</th>
+            <th>Shorten URL </th>
+        </tr>
+
+    @foreach (UrlModel item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem=>@item.UrlName)
+            </td>
+            <td>
+                <a href="@Html.Raw(@item.UrlName)" target="_blank">@item.ShortenUrl</a>
+
+                
+            </td>
+        </tr>
+
+    }
+    </table>
+

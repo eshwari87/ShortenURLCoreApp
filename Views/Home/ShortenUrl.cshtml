@@ -1,0 +1,34 @@
+﻿@model ShortenURLCoreApp.Models.UrlModel
+
+
+<div class="Container">
+
+    @if (ViewData.ModelState.IsValid)
+    {
+        @if (@ViewData["Message"] != null)
+        {
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="alert alert-warning">
+                    <h2>@ViewData["Message"]</h2><br />
+                    <a href="@ViewData["originalurl"]" target="_blank">@ViewBag.shorten</a>
+                </div>
+            </div>
+        }
+
+        else
+        {
+
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="alert alert-success">
+                        <h2 class="text-center text-success">Your Shorten URL is ready!!</h2>
+                        <a href="@ViewBag.absoluteuri" target="_blank">@ViewBag.shorten</a>
+                    </div>
+
+                </div>
+            </div>
+
+        }
+    }
+
+</div>
